@@ -1,0 +1,17 @@
+.navbar {
+  width: 100vw;
+  height: 5vh;
+  background-color: #ddd;
+}
+.label,
+.logo {
+  width: 45%;
+}
+
+.subNavbar {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+}

@@ -1,10 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/Main";
-
-function Footer() {
-  return <footer className="footer">footer</footer>;
-}
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
