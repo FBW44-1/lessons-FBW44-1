@@ -1,12 +1,6 @@
 import "./App.css";
-
-function Navbar() {
-  return <nav className="navbar">navbar</nav>;
-}
-
-function Main() {
-  return <div className="main">main</div>;
-}
+import Navbar from "./components/Navbar/Navbar";
+import Main from "./components/Main/Main";
 
 function Footer() {
   return <footer className="footer">footer</footer>;
