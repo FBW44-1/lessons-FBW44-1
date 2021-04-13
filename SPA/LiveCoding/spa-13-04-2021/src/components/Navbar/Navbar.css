@@ -3,15 +3,14 @@
   height: 5vh;
   background-color: #ddd;
 }
-.label,
-.logo {
-  width: 45%;
-}
 
 .subNavbar {
   display: flex;
 }
 
-.logo {
+.Logo {
   display: flex;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
 }
