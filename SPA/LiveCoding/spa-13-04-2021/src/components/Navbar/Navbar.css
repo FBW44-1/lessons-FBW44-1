@@ -5,12 +5,12 @@
 }
 
 .subNavbar {
+  width: 100%;
   display: flex;
 }
 
 .Logo {
   display: flex;
-  width: 80%;
-  text-align: center;
+  width: 90%;
   justify-content: center;
 }
