@@ -11,6 +11,12 @@ function Navbar() {
           </label>
           <div className="Logo">Logo</div>
         </div>
+        <div className="side-bar">
+          <div className="item-1">Home</div>
+          <div className="item-2">Products</div>
+          <div className="item-3">About</div>
+          <div className="item-4">Contact</div>
+        </div>
       </div>
     </nav>
   );

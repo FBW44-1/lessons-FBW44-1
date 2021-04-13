@@ -14,3 +14,9 @@
   width: 90%;
   justify-content: center;
 }
+
+.side-bar {
+  width: 80%;
+  background-color: antiquewhite;
+  height: 70vh;
+}
