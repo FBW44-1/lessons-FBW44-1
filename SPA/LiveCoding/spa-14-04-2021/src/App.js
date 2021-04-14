@@ -1,9 +1,9 @@
 import "./App.css";
-
 import {
   FunctionComponent,
   ClassComponent,
 } from "./components/ClassVsFunction";
+import MapInJsx from "./components/MapInJsx";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
 
       <FunctionComponent />
       <ClassComponent />
+      <MapInJsx />
     </div>
   );
 }
