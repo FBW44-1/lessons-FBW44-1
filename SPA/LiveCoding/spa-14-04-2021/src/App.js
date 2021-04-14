@@ -4,6 +4,7 @@ import {
   ClassComponent,
 } from "./components/ClassVsFunction";
 import MapInJsx from "./components/MapInJsx";
+import NestMapInJsx from "./components/NestMapInJsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <FunctionComponent />
       <ClassComponent />
       <MapInJsx />
+      <NestMapInJsx />
     </div>
   );
 }
