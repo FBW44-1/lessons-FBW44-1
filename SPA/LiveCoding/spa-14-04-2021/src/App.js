@@ -6,6 +6,8 @@ import {
 import MapInJsx from "./components/MapInJsx";
 import NestMapInJsx from "./components/NestMapInJsx";
 
+import { FunComponent, CComponent } from "./components/ClassVsFunctionPart2";
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,10 @@ function App() {
       <ClassComponent />
       <MapInJsx />
       <NestMapInJsx />
+      <hr />
+      <FunComponent />
+      <hr />
+      <CComponent />
     </div>
   );
 }
