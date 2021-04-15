@@ -10,15 +10,20 @@ export default function FavLang() {
   };
 
   const onAddLang = () => {
-    const updateLang = [...languages, input];
-    //console.log(updateLang.push(input));
-    setLanguages(updateLang);
+    //console.log(!!input);
+
+    if (input.trim()) {
+      const updateLang = [...languages, input];
+      //console.log(updateLang.push(input));
+      setLanguages(updateLang);
+      setInput("");
+    }
   };
 
   return (
     <div>
       <h1>FavLang</h1>
-      <input type="text" onChange={onChangeLang} />
+      <input value={input} type="text" onChange={onChangeLang} />
       <button onClick={onAddLang}>add</button>
       <h2>My favorite languages</h2>
       <ul>
