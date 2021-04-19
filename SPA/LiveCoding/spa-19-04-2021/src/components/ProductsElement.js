@@ -1,10 +1,13 @@
 import Card from "./Card";
 
-const ProductsElement = () => {
+const ProductsElement = (props) => {
+  console.log("Products from ProductsElement ==> ", props.productsData);
   return (
     <div>
       ProductsElement
-      <Card />
+      {props.productsData.map((prod) => (
+        <Card key={prod.id} product={prod} />
+      ))}
     </div>
   );
 };

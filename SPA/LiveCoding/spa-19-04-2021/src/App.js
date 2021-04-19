@@ -34,6 +34,13 @@ const initProducts = [
     url:
       "https://www.galeria.de/dw/image/v2/karstadt/APInoauth/storage/VX-1/file/VX-15781627/0.47131861020380283/VX-15781627.jpeg?sw=1200&sh=1200&sm=fit",
   },
+  {
+    id: uuidv4(),
+    title: "nike T-shirt",
+    details: "Product details ....",
+    url:
+      "https://www.galeria.de/dw/image/v2/karstadt/APInoauth/storage/VX-1/file/VX-15781627/0.47131861020380283/VX-15781627.jpeg?sw=1200&sh=1200&sm=fit",
+  },
 ];
 
 function App() {
@@ -48,7 +55,7 @@ function App() {
       <hr />
       <div>
         <h2>Products</h2>
-        <ProductsElement />
+        <ProductsElement productsData={productsData} />
       </div>
     </div>
   );
