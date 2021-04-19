@@ -1,8 +1,8 @@
 import "./App.scss";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import AddProductForm from "./components/AddProductForm";
 import ProductsElement from "./components/ProductsElement";
-import { v4 as uuidv4 } from "uuid";
 
 /**
  * product
@@ -50,7 +50,10 @@ function App() {
       <h1>Online Shop</h1>
       <div>
         <h2>Add Products</h2>
-        <AddProductForm />
+        <AddProductForm
+          productsData={productsData}
+          setProductsData={setProductsData}
+        />
       </div>
       <hr />
       <div>
