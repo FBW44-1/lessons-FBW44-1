@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import User from "./components/User";
+import Navbar from "./components/Navbar";
 class App extends Component {
   state = {
     bootcamp: "Ironhack",
     backColor: "blue",
     counter: 0,
+    userName: "Max",
   };
 
   colorMapper = () => "#" + Math.floor(Math.random() * 16777215).toString(16);
+
   clickHandler = () => {
     console.log("CLICKED!", this.colorMapper());
     if (this.state.counter % 5 == 0) {
@@ -27,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar user={this.state.userName} />
         <User
           bootcampName={this.state.bootcamp}
           backColorStyle={this.state.backColor}
