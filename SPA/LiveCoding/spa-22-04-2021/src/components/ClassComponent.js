@@ -31,11 +31,13 @@ class ClassComponent extends Component {
     this.getUsers();
     // this.setState({ ...this.state, users: usersData });
   }
+  renderUsers = () =>
+    this.state.users.map((user) => <Users key={user.id} user={user} />);
   render() {
     return (
       <div>
         <h1>Class component</h1>
-        {this.state.users ? <Users /> : <p> Users not found</p>}
+        {this.state.users ? this.renderUsers() : <p> Users not found</p>}
       </div>
     );
   }
