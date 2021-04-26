@@ -1,0 +1,42 @@
+.avatar {
+    overflow: hidden;
+}
+
+.avatar img {
+    display: block;
+    width: 100%;
+}
+
+/* Sizes */
+.avatar-s {
+    width: 30px;
+    height: 30px;
+}
+
+.avatar-m {
+    width: 60px;
+    height: 60px;
+}
+
+.avatar-l {
+    width: 120px;
+    height: 120px;
+}
+
+.avatar-xl {
+    width: 200px;
+    height: 200px;
+}
+
+/* Types */
+.avatar-square {
+    border-radius: 0;
+}
+
+.avatar-circle {
+    border-radius: 50%;
+}
+
+.avatar-rounded {
+    border-radius: 4px;
+}

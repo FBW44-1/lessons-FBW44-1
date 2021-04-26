@@ -1,0 +1,17 @@
+.card-collection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  flex: 0 0 33%;
+  margin-bottom: 32px;  
+}
+
+.card-content {
+  border: 1px solid #ececec;
+padding: 0 8px;
+padding: 20px;
+margin: 0 8px;
+}

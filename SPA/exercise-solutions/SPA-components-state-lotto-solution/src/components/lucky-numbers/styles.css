@@ -1,0 +1,45 @@
+.lucky-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    min-height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid lightblue;
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+}
+
+.lucky-number--bonus {
+    background-color: lightblue;
+}
+
+.button {
+    border-radius: 4px;
+    border: 2px solid lightblue;
+    background-color: lightblue;
+    margin-right: 8px;
+    padding: 8px 16px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(166, 205, 220);
+}
+
+.button-reset {
+    background-color: white;
+    color: lightblue;
+}
+
+.button-reset:hover {
+    background-color: rgb(231, 248, 254);
+    color: lightblue;
+}
