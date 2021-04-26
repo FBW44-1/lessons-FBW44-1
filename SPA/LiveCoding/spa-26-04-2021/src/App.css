@@ -1,0 +1,8 @@
+.Container {
+  width: 300px;
+  margin: auto;
+}
+
+.SimpleForm {
+  border: 1px solid red;
+}
