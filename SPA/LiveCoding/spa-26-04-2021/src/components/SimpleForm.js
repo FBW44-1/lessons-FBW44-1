@@ -16,7 +16,7 @@ function SimpleForm() {
     setSecondInputValue(e.target.value);
   };
   return (
-    <div>
+    <div className="SimpleForm">
       <h2>Simple Form</h2>
       <form>
         <div style={inputStyles}>
