@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 
 export default function CardsForm() {
+  const [cardTitle, setCardTitle] = useState("");
   const [cardsData, setCardsData] = useState([
     {
       cardTitle: "First card title",
@@ -14,11 +15,30 @@ export default function CardsForm() {
         "https://www.bmwgroup.com/content/dam/grpw/websites/bmwgroup_com/brands/einstiegsseite/1280x854_P90351044_highRes_the-new-bmw-8-series.jpg",
     },
   ]);
+
+  const onCardTitle = (e) => {
+    console.log(e.target.value);
+    setCardTitle(e.target.value);
+  };
   return (
     <div className="CardsForm">
       <h2>Cards form</h2>
       <form>
         <h3>Form</h3>
+        <div>
+          <label htmlFor="cardTitle">Card title: </label>
+          <input
+            value={cardTitle}
+            onChange={onCardTitle}
+            type="text"
+            id="cardTitle"
+          />
+        </div>
+        <div>
+          <label htmlFor="cardImg"> Card img: </label>
+          <input type="text" id="cardImg" />
+        </div>
+        <button type="submit">Submit</button>
       </form>
       <div>
         <h3>Cards</h3>
