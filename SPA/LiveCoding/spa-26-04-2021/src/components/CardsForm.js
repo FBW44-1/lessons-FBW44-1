@@ -3,6 +3,8 @@ import Card from "./Card";
 
 export default function CardsForm() {
   const [cardTitle, setCardTitle] = useState("");
+  const [cardImg, setCardImg] = useState("");
+
   const [cardsData, setCardsData] = useState([
     {
       cardTitle: "First card title",
@@ -16,14 +18,32 @@ export default function CardsForm() {
     },
   ]);
 
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    const newCardData = {
+      cardTitle: cardTitle,
+      img: cardImg,
+    };
+
+    const CopyCardsDataAndUpdate = [newCardData, ...cardsData];
+    setCardsData(CopyCardsDataAndUpdate);
+    setCardTitle("");
+    setCardImg("");
+    //console.log("Data submit => ", CopyCardsDataAndUpdate);
+  };
+
   const onCardTitle = (e) => {
     console.log(e.target.value);
     setCardTitle(e.target.value);
   };
+
+  const onCardImg = (e) => {
+    setCardImg(e.target.value);
+  };
   return (
     <div className="CardsForm">
       <h2>Cards form</h2>
-      <form>
+      <form onSubmit={onSubmitHandler}>
         <h3>Form</h3>
         <div>
           <label htmlFor="cardTitle">Card title: </label>
@@ -36,7 +56,12 @@ export default function CardsForm() {
         </div>
         <div>
           <label htmlFor="cardImg"> Card img: </label>
-          <input type="text" id="cardImg" />
+          <input
+            onChange={onCardImg}
+            value={cardImg}
+            type="text"
+            id="cardImg"
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
