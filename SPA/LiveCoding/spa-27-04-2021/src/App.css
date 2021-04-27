@@ -5,6 +5,8 @@
 
 .Navbar > a {
   padding: 5px;
+  text-decoration: none;
+  color: blue;
 }
 
 .Footer {
