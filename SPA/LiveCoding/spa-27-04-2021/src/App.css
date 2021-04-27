@@ -1,0 +1,23 @@
+.Navbar {
+  background-color: azure;
+  display: flex;
+}
+
+.Navbar > a {
+  padding: 5px;
+}
+
+.Footer {
+  background-color: black;
+  color: white;
+}
+
+.Navbar,
+.Footer {
+  text-align: center;
+  padding: 10px;
+}
+.Pages {
+  min-height: 60vh;
+  padding: 10px;
+}
