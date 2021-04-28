@@ -10,6 +10,8 @@ import AboutPage from "./pages/About";
 import NotFoundPage from "./pages/NotFound";
 import { Switch, Route } from "react-router-dom";
 
+// Create Products data [{},{},....]
+
 function App() {
   return (
     <div>
