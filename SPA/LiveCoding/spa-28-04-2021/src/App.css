@@ -1,0 +1,23 @@
+.Navbar {
+  background-color: #ccc;
+  padding: 20px;
+}
+.Navbar > a {
+  text-decoration: none;
+  padding: 10px;
+}
+.Footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.Pages {
+  height: 80vh;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+}
