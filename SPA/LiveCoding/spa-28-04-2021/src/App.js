@@ -10,6 +10,7 @@ import AboutPage from "./pages/About";
 import NotFoundPage from "./pages/NotFound";
 import { Switch, Route } from "react-router-dom";
 import productsData from "./data/ProductsData";
+import ProductView from "./pages/ProductView";
 // Create Products data [{},{},....]
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/products">
             <ProductsPage productsData={productsData} />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductView />
           </Route>
           <Route exact path="/posts">
             <PostsPage />
