@@ -26,7 +26,7 @@ function App() {
             <ProductsPage productsData={productsData} />
           </Route>
           <Route path="/products/:productId">
-            <ProductView />
+            <ProductView productsData={productsData} />
           </Route>
           <Route exact path="/posts">
             <PostsPage />

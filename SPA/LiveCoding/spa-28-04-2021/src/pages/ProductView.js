@@ -1,17 +1,19 @@
 import { useParams } from "react-router-dom";
 
-export default function ProductView() {
-  console.log("ProductView ==> ", useParams());
+export default function ProductView(props) {
+  const params = useParams();
+  const productsData = props.productsData;
+  const targetObject = productsData[params.productId];
+  //console.log("ProductView useParams()==> ", params);
+  //console.log("ProductView props==> ", props);
+  // console.log("ProductView target object ==> ", productsData[params.productId]);
+
   return (
     <div className="Container">
-      <h2>title</h2>
-      <img
-        style={{ width: "100%" }}
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
-        alt=""
-      />
-      <p>price: 20 Euro</p>
-      <p>body</p>
+      <h2>{targetObject.title}</h2>
+      <img style={{ width: "100%" }} src={targetObject.image} alt="" />
+      <p>price: {targetObject.price} Euro</p>
+      <p>{targetObject.body}</p>
     </div>
   );
 }
