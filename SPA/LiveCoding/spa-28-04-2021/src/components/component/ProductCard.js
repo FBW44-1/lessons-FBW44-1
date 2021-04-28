@@ -1,19 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function ProductCard() {
+export default function ProductCard(props) {
+  console.log(" ProductCard ==> ", props);
   return (
     <div className="card" style={{ marginBottom: "15px" }}>
-      <img
-        src="https://mediapool.bmwgroup.com/cache/P9/202010/P90403620/P90403620-bmw-m4-competition-x-kith-10-2020-2002px.jpg"
-        className="card-img-top"
-        alt="..."
-      />
+      <img src={props.productObj.image} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
+        <h5 className="card-title">{props.productObj.title}</h5>
 
-        <a href="#" className="btn btn-primary">
+        <Link
+          to={"/products/" + props.productObj.id}
+          className="btn btn-primary"
+        >
           Read more
-        </a>
+        </Link>
       </div>
     </div>
   );
