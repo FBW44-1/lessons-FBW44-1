@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CounterContext } from "../store/CounterContext";
 
-export default function CounterB({
-  incrementHandler,
-  counter,
-  decrementHandler,
-}) {
+export default function CounterB() {
+  const { incrementHandler, counter, decrementHandler } = useContext(
+    CounterContext
+  );
   return (
     <div className="Container">
       <h3>Counter B</h3>

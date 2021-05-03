@@ -1,11 +1,6 @@
 import { createContext, useState } from "react";
 
-const CounterContext = createContext({
-  counter: 0,
-  incrementHandler: () => {},
-  decrementHandler: () => {},
-  resetHandler: () => {},
-});
+const CounterContext = createContext();
 
 const CounterProvider = (props) => {
   const [counter, setCounter] = useState(0);
