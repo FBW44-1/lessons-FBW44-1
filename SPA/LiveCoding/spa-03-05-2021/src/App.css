@@ -1,0 +1,29 @@
+.App {
+  width: 500px;
+  margin: auto;
+}
+.App h1 {
+  text-align: center;
+  padding: 5px;
+}
+
+.Container {
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+}
+.Button {
+  margin: 10px;
+}
+.Counter {
+  padding: 20px;
+  background-color: #ccc;
+}
+.Reset {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: 10px;
+}
