@@ -1,4 +1,14 @@
+import { useState, useEffect } from "react";
 export default function Sign() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      window.location.replace("/");
+    }
+  }, []);
+
   return (
     <div className="text-center">
       <main className="form-signin">
@@ -23,13 +33,16 @@ export default function Sign() {
           </div>
           <div className="form-floating Password">
             <input
-              type="password"
+              type={isVisible ? "text" : "password"}
               className="form-control"
               id="floatingPassword"
               placeholder="Password"
             />
             <span className="ShowPassword">
-              <i class="far fa-eye"></i>
+              <i
+                onClick={() => setIsVisible(!isVisible)}
+                className="far fa-eye"
+              ></i>
             </span>
             <label htmlFor="floatingPassword">Password</label>
           </div>
