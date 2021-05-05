@@ -1,6 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Context } from "../store/context";
+
 export default function Sign() {
   const [isVisible, setIsVisible] = useState(false);
+  const {
+    onSignHandler,
+    onEmailHandler,
+    onCheckEmailHandler,
+    onPasswordHandler,
+    onPasswordCheckHandler,
+  } = useContext(Context);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -24,6 +33,8 @@ export default function Sign() {
 
           <div className="form-floating">
             <input
+              onChange={onEmailHandler}
+              onBlur={onCheckEmailHandler}
               type="email"
               className="form-control"
               id="floatingInput"
@@ -33,6 +44,8 @@ export default function Sign() {
           </div>
           <div className="form-floating Password">
             <input
+              onChange={onPasswordHandler}
+              onBlur={onPasswordCheckHandler}
               type={isVisible ? "text" : "password"}
               className="form-control"
               id="floatingPassword"
@@ -47,7 +60,11 @@ export default function Sign() {
             <label htmlFor="floatingPassword">Password</label>
           </div>
 
-          <button className="w-100 btn btn-lg btn-primary" type="button">
+          <button
+            onClick={onSignHandler}
+            className="w-100 btn btn-lg btn-primary"
+            type="button"
+          >
             Sign in
           </button>
           <p className="mt-5 mb-3 text-muted">&copy; 2021</p>
