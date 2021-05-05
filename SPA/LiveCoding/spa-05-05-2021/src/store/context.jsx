@@ -58,8 +58,8 @@ const Provider = (props) => {
   const onCheckEmailHandler = () => {
     const isValid = validator("email");
     if (isValid) return;
-    alert("The Email is not valid");
-    setIsValidEmail(false);
+    // alert("The Email is not valid");
+    setIsValidEmail(isValid);
   };
   const onPasswordHandler = (e) => {
     let value = e.target.value.trim();
@@ -69,7 +69,7 @@ const Provider = (props) => {
     const isValid = validator("password");
     if (isValid) return;
     // alert("The Password is not valid");
-    setIsValidPassword(false);
+    setIsValidPassword(isValid);
   };
   const onSignHandler = () => {
     if (!isValidEmail) {
@@ -84,6 +84,10 @@ const Provider = (props) => {
   return (
     <Context.Provider
       value={{
+        email,
+        password,
+        isValidEmail,
+        isValidPassword,
         onSignHandler,
         onEmailHandler,
         onCheckEmailHandler,

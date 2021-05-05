@@ -9,6 +9,10 @@ export default function Sign() {
     onCheckEmailHandler,
     onPasswordHandler,
     onPasswordCheckHandler,
+    isValidEmail,
+    isValidPassword,
+    email,
+    password,
   } = useContext(Context);
 
   useEffect(() => {
@@ -41,6 +45,11 @@ export default function Sign() {
               placeholder="name@example.com"
             />
             <label htmlFor="floatingInput">Email address</label>
+            {!isValidEmail && email && (
+              <div class="alert alert-danger" role="alert">
+                The email is not valid
+              </div>
+            )}
           </div>
           <div className="form-floating Password">
             <input
@@ -59,7 +68,11 @@ export default function Sign() {
             </span>
             <label htmlFor="floatingPassword">Password</label>
           </div>
-
+          {password && !isValidPassword && (
+            <div class="alert alert-danger" role="alert">
+              The password is not valid
+            </div>
+          )}
           <button
             onClick={onSignHandler}
             className="w-100 btn btn-lg btn-primary"
