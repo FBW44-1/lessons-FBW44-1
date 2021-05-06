@@ -1,0 +1,4 @@
+export const EMAIL_VALUE = "EMAIL_VALUE";
+export const IS_VALID_EMAIL = "IS_VALID_EMAIL";
+export const PASSWORD_VALUE = "PASSWORD_VALUE";
+export const IS_VALID_PASSWORD = "IS_VALID_PASSWORD";

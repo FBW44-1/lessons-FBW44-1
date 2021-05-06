@@ -1,33 +1,33 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import { DBUsers } from "../data/DBUsers";
 import { Context } from "./Context";
+import {
+  EMAIL_VALUE,
+  IS_VALID_PASSWORD,
+  IS_VALID_EMAIL,
+  PASSWORD_VALUE,
+} from "./reduce/actions";
+import { emailReducer, passwordReducer } from "./reduce/reducers";
 const initEmail = { email: "", isValidEmail: false };
+const initPassword = { password: "", isValidPassword: false };
 
-const EMAIL_VALUE = "EMAIL_VALUE";
-const IS_VALID_EMAIL = "IS_VALID_EMAIL";
-
-function emailReducer(state, action) {
-  switch (action.type) {
-    case EMAIL_VALUE:
-      return { ...state, email: action.payload };
-    case IS_VALID_EMAIL:
-      return { ...state, isValidEmail: action.payload };
-    default:
-      return state;
-  }
-}
-//const isValid = validator('email') // true or false
+// const isValid = validator('email') // true or false
 // dispatchEmailState({type:EMAIL_VALUE, payload : value})
 // dispatchEmailState({type: IS_VALID_EMAIL, payload: isValid})
 const Provider = (props) => {
   const [emailState, dispatchEmailState] = useReducer(emailReducer, initEmail);
+  const [passwordState, dispatchPasswordState] = useReducer(
+    passwordReducer,
+    initPassword
+  );
   const { email, isValidEmail } = emailState;
+  const { password, isValidPassword } = passwordState;
 
   //const [email, setEmail] = useState("");
   //const [isValidEmail, setIsValidEmail] = useState(false);
 
-  const [password, setPassword] = useState("");
-  const [isValidPassword, setIsValidPassword] = useState(false);
+  //const [password, setPassword] = useState("");
+  //const [isValidPassword, setIsValidPassword] = useState(false);
 
   const validator = (param) => {
     let isValid = false;
@@ -45,7 +45,8 @@ const Provider = (props) => {
         }
         if (param === "password" && user.password === password) {
           isValid = true;
-          setIsValidPassword(true);
+          // setIsValidPassword(true);
+          dispatchPasswordState({ type: IS_VALID_PASSWORD, payload: true });
         }
       }
     });
@@ -66,13 +67,15 @@ const Provider = (props) => {
   };
   const onPasswordHandler = (e) => {
     let value = e.target.value.trim();
-    setPassword(value);
+    // setPassword(value);
+    dispatchPasswordState({ type: PASSWORD_VALUE, payload: value });
   };
   const onPasswordCheckHandler = () => {
     const isValid = validator("password");
     if (isValid) return;
     // alert("The Password is not valid");
-    setIsValidPassword(isValid);
+    //setIsValidPassword(isValid);
+    dispatchPasswordState({ type: IS_VALID_PASSWORD, payload: isValid });
   };
   const onSignHandler = () => {
     if (!isValidEmail) {
